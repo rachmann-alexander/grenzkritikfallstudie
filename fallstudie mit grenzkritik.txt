@@ -1,0 +1,274 @@
+Below is a **conceptual model and boundary-aware requirements analysis** for a **street-level image capture and visualization system** comparable to Google Street View.
+The analysis is written from a **systems analyst / requirements engineer** perspective and explicitly integrates boundary critique.
+Assumptions are stated where required. Conflicts are preserved rather than resolved.
+
+---
+
+## 1. System Overview (Baseline Conceptualization)
+
+### 1.1 Core System Purpose (Baseline)
+
+The system captures, processes, stores, and publishes panoramic, street-level imagery of physical environments to support navigation, orientation, visualization, and contextual information access.
+
+### 1.2 Core Functions
+
+* Mobile image capture (vehicles, pedestrians, aerial or fixed devices)
+* Geospatial alignment and indexing
+* Image processing (stitching, blurring, enhancement)
+* Data storage and retrieval
+* Public-facing visualization interface
+* Access control and API provision
+
+### 1.3 Initial System Boundary (Pre-Critique)
+
+**Inside boundary**
+
+* Capture hardware and software
+* Processing pipelines
+* Databases and servers
+* User-facing applications
+
+**Outside boundary**
+
+* Legal frameworks
+* Social norms of public space
+* Affected individuals and communities
+* Secondary data uses by third parties
+
+The remainder of this document revises these boundaries.
+
+---
+
+## 2. Motivation Boundary Analysis
+
+### 2.1 Beneficiaries (Explicit and Implicit)
+
+**Direct beneficiaries**
+
+* End users (navigation, exploration, planning)
+* Platform operator (data asset accumulation, monetization, service integration)
+* Third-party developers (APIs, embedded services)
+* Businesses visible in imagery (discoverability)
+
+**Indirect beneficiaries**
+
+* Urban planners and researchers
+* Emergency services (situational awareness)
+* Real estate and logistics sectors
+
+### 2.2 Potentially Disadvantaged Parties
+
+* Individuals captured incidentally (pedestrians, residents)
+* Marginalized or surveilled communities
+* Informal or stigmatized businesses or locations
+* Groups disproportionately visible in public space (e.g., unhoused people)
+
+### 2.3 Public Benefit: Definition and Authority
+
+**What counts as “public benefit”**
+
+* Increased spatial knowledge
+* Improved navigation efficiency
+* Economic visibility of places
+* Digital documentation of environments
+
+**Who defines public benefit**
+
+* Platform operator (through product goals)
+* Regulators (through legal compliance)
+* Users (through usage patterns)
+* Largely *not* defined by those incidentally captured
+
+**Assumption**
+
+> Public benefit is inferred from aggregate user utility rather than consent of all affected parties.
+
+---
+
+## 3. Control Boundary Analysis
+
+### 3.1 Control over Image Capture
+
+* Platform operator determines:
+
+  * Where capture occurs
+  * Frequency and timing
+  * Capture modality
+* Limited external influence via regulation or opt-out requests
+
+### 3.2 Control over Data Processing
+
+* Platform operator controls:
+
+  * Image selection and retention
+  * Blurring and anonymization thresholds
+  * Quality enhancement
+  * Metadata enrichment
+
+### 3.3 Control over Access and Use
+
+* Tiered access:
+
+  * Public users (view-only)
+  * Registered developers (API access)
+  * Internal teams (full dataset)
+* Secondary uses controlled by platform policy, not affected subjects
+
+**Boundary Observation**
+Control is centralized with the operator, while exposure is distributed across the population.
+
+---
+
+## 4. Knowledge Boundary Analysis
+
+### 4.1 Embedded Assumptions about Public Space
+
+The system assumes:
+
+* Publicly visible spaces are legitimate targets for capture
+* Visibility implies permissibility
+* Static images adequately represent dynamic social contexts
+* Spatial accuracy is more important than social meaning
+
+### 4.2 Assumptions about Visibility
+
+* Being seen equals being recordable
+* Recording is neutral documentation rather than interpretation
+* Aggregation of images does not change their social impact
+
+### 4.3 Ignored or Marginalized Interpretations
+
+* Public space as contested or unevenly experienced
+* Visibility as risk rather than benefit
+* Cultural norms around being photographed
+* Temporal sensitivity (what is acceptable now may not be later)
+
+**Knowledge Boundary Tension**
+The system treats space as cartographic data, while many actors experience it as lived, political, or vulnerable space.
+
+---
+
+## 5. Legitimacy Boundary Analysis
+
+### 5.1 Affected Without Consent
+
+* Individuals incidentally captured
+* Residents whose homes are persistently visible
+* Communities repeatedly imaged but not consulted
+* Individuals unable to meaningfully opt out (e.g., appearing in others’ images)
+
+### 5.2 Representation Gaps
+
+* No formal representation of:
+
+  * Bystanders
+  * Local communities
+  * Non-users affected by the system
+* Feedback mechanisms are reactive rather than participatory
+
+### 5.3 Legitimacy Assumption
+
+> Legal compliance is treated as sufficient legitimacy, independent of social consent.
+
+---
+
+## 6. Revised System Boundaries (Post-Critique)
+
+### 6.1 Expanded System Boundary
+
+**Now considered inside the system**
+
+* Capture decision criteria
+* Opt-out and redress mechanisms
+* Anonymization policies as socio-technical components
+* Data retention and update cycles
+* Governance processes
+
+**Still outside but explicitly acknowledged**
+
+* Cultural norms
+* Power asymmetries
+* Downstream reinterpretations of imagery
+
+---
+
+## 7. Extended Stakeholder Model
+
+### 7.1 Primary Stakeholders
+
+* Platform operator
+* End users
+* Regulators
+
+### 7.2 Secondary Stakeholders
+
+* Incidentally captured individuals
+* Property occupants
+* Local communities
+* Third-party data users
+
+### 7.3 Latent / Silent Stakeholders
+
+* Future subjects (captured historically)
+* Groups affected by secondary inference (profiling, surveillance)
+* Individuals without digital access or literacy
+
+---
+
+## 8. Identified Value Conflicts (Unresolved)
+
+* **Visibility vs. Privacy**
+* **Public utility vs. individual autonomy**
+* **Data completeness vs. contextual sensitivity**
+* **Centralized control vs. distributed impact**
+* **Legal permissibility vs. social legitimacy**
+
+These conflicts are structural and not fully resolvable within system design alone.
+
+---
+
+## 9. Revised and Additional Requirements
+
+### 9.1 Functional Requirements (Revised)
+
+* FR-1: The system shall support post-publication redress requests.
+* FR-2: The system shall allow differentiated capture policies by location type.
+* FR-3: The system shall log and expose capture metadata (time, method).
+
+### 9.2 Non-Functional Requirements (Added)
+
+* NFR-1: Transparency of capture and processing practices.
+* NFR-2: Auditability of anonymization decisions.
+* NFR-3: Mechanisms for delayed publication or temporal decay.
+
+### 9.3 Governance Requirements
+
+* GR-1: Explicit documentation of normative assumptions.
+* GR-2: Periodic review of public benefit definitions.
+* GR-3: Channels for community-level feedback, not only individual complaints.
+
+---
+
+## 10. Explicit Normative Assumptions
+
+1. Public visibility implies recordability.
+2. Aggregate benefit can outweigh individual discomfort.
+3. Legal compliance is a sufficient baseline for operation.
+4. Technical anonymization can substitute for consent.
+5. Centralized governance can adequately manage distributed effects.
+6. Spatial accuracy is prioritized over social interpretation.
+7. Opt-out mechanisms are acceptable substitutes for opt-in consent.
+
+---
+
+## 11. Summary
+
+This conceptual model reframes a street-level image capture system as a **socio-technical system**, not merely a data pipeline.
+Boundary critique reveals that benefits, control, knowledge production, and legitimacy are unevenly distributed.
+The revised model preserves these tensions rather than resolving them, making them explicit inputs to system requirements and governance design.
+
+If you want, I can next:
+
+* Translate this into **SysML / UML artifacts**
+* Produce a **requirements traceability matrix**
+* Compare this model directly against Google Street View’s publicly documented practices
